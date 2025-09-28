@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Counter:{{counter}}</h1>
+
+<form method="post">
+     {% csrf_token %}
+    <a href="{% url 'welcome' %}"><button type="submit" name="plus">+</button></a><br>
+    <a href="{% url 'users_list' %}"><button type="submti" name="minus">-</button></a><br>
+    <a href="city-time/"><button type="submit" name="reset">reset</button></a><br>
+</form>
+<a href="{% url 'welcome' %}"><button>Return to welcome</button></a><br>
+</body>
+</html>

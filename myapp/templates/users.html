@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>User list page</h1>
+
+<ul>
+        {% for user in users %}
+        <li>{{ user.fullname }} - {{user.age}}</li>
+        {% endfor %}
+</ul>
+<a href="{% url 'welcome' %}"><button>Return to welcome</button></a><br>
+</body>
+</html>

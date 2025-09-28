@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>City-times</h1>
+
+<ul>
+        {% for city, time in cities.items %}
+            <li>{{ city }} - {{time}}</li>
+        {% endfor %}
+</ul>
+<a href="{% url 'welcome' %}"><button>Return to welcome</button></a><br>
+</body>
+</html>

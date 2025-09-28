@@ -17,6 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from myapp.views import welcome,users_list,city_time,counter
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path(route="",view=welcome,name='welcome'),
+    path(route="users/",view=users_list,name="users_list"),
+    path(route="city-time/",view=city_time,name="city_time"),
+    path(route="cnt/",view=counter,name="counter")
 ]
