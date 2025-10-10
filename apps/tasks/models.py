@@ -16,9 +16,10 @@ from django.db.models import (
 from django.contrib.auth.models import User
 
 # Project modules
+from apps.abstracts.models import AbstractBaseModel
 
 
-class Project(Model):
+class Project(AbstractBaseModel):
     """
     Project database (table) model.
     """
@@ -38,19 +39,12 @@ class Project(Model):
         blank=True,
         related_name="joined_projects",
     )
-    created_at = DateTimeField(
-        auto_now_add=True
-    )
-    updated_at = DateTimeField(
-        auto_now=True
-    )
-    deleted_at = DateTimeField(
-        null=True,
-        blank=True,
-    )
 
+    def __str__(self) -> str:
+        return self.name
+    
 
-class Task(Model):
+class Task(AbstractBaseModel):
     """
     Task database (table) model.
     """
@@ -101,19 +95,10 @@ class Task(Model):
         through_fields=("task", "user"),
         blank=True,
     )
-    created_at = DateTimeField(
-        auto_now_add=True
-    )
-    updated_at = DateTimeField(
-        auto_now=True
-    )
-    deleted_at = DateTimeField(
-        null=True,
-        blank=True,
-    )
 
 
-class UserTask(Model):
+
+class UserTask(AbstractBaseModel):
     """
     UserTask database (table) model.
     """
@@ -126,16 +111,7 @@ class UserTask(Model):
         to=User,
         on_delete=CASCADE,
     )
-    created_at = DateTimeField(
-        auto_now_add=True
-    )
-    updated_at = DateTimeField(
-        auto_now=True
-    )
-    deleted_at = DateTimeField(
-        null=True,
-        blank=True,
-    )
+
 
     class Meta:
         """Customization of the model's meta data."""
