@@ -16,10 +16,10 @@ from django.db.models import (
 from django.contrib.auth.models import User
 
 # Project modules
-from apps.abstracts.models import AbstractBaseModel
+from apps.abstracts.models import AbstractSoftDeletableModel
 
 
-class Project(AbstractBaseModel):
+class Project(AbstractSoftDeletableModel):
     """
     Project database (table) model.
     """
@@ -44,7 +44,7 @@ class Project(AbstractBaseModel):
         return self.name
     
 
-class Task(AbstractBaseModel):
+class Task(AbstractSoftDeletableModel):
     """
     Task database (table) model.
     """
@@ -56,17 +56,12 @@ class Task(AbstractBaseModel):
     STATUS_IN_PROGRESS_LABEL = "In Progress"
     STATUS_DONE = 3
     STATUS_DONE_LABEL = "Done"
-    # STATUS_CHOICES = (
-    #     (STATUS_TODO, STATUS_TODO_LABEL),
-    #     (STATUS_IN_PROGRESS, STATUS_IN_PROGRESS_LABEL),
-    #     (STATUS_DONE, STATUS_DONE_LABEL),
-    # )
-    STATUS_CHOICES = {
-        STATUS_TODO: STATUS_TODO_LABEL,
-        STATUS_IN_PROGRESS: STATUS_IN_PROGRESS_LABEL,
-        STATUS_DONE: STATUS_DONE_LABEL,
-    }
-
+    STATUS_CHOICES = (
+        (STATUS_TODO, STATUS_TODO_LABEL),
+        (STATUS_IN_PROGRESS, STATUS_IN_PROGRESS_LABEL),
+        (STATUS_DONE, STATUS_DONE_LABEL),
+    )
+    
     name = CharField(
         max_length=NAME_MAX_LEN,
         db_index=True,
@@ -98,7 +93,7 @@ class Task(AbstractBaseModel):
 
 
 
-class UserTask(AbstractBaseModel):
+class UserTask(AbstractSoftDeletableModel):
     """
     UserTask database (table) model.
     """
