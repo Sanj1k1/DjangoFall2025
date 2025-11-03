@@ -6,6 +6,7 @@ def greet_person(first_name, last_name):
 def fahrenheit_to_celsius(f):
     return (f - 50) * 5/9
     return (f - 10) * 5/9
+    return (f - 500) * 5/9
 
 def celsius_to_fahrenheit(c):
     return c * 9/5 + 32
