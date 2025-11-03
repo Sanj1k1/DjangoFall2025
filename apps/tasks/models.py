@@ -13,11 +13,9 @@ from django.db.models import (
     PROTECT,
     CASCADE,
 )
-from django.contrib.auth.models import User
-
 # Project modules
 from apps.abstracts.models import AbstractSoftDeletableModel
-
+from settings.base import AUTH_USER_MODEL
 
 class Project(AbstractSoftDeletableModel):
     """
@@ -30,12 +28,12 @@ class Project(AbstractSoftDeletableModel):
         max_length=NAME_MAX_LEN,
     )
     author = ForeignKey(
-        to=User,
+        to=AUTH_USER_MODEL,
         on_delete=PROTECT,
         related_name="owned_projects",
     )
     users = ManyToManyField(
-        to=User,
+        to=AUTH_USER_MODEL,
         blank=True,
         related_name="joined_projects",
     )
@@ -85,7 +83,7 @@ class Task(AbstractSoftDeletableModel):
         on_delete=CASCADE,
     )
     assignees = ManyToManyField(
-        to=User,
+        to=AUTH_USER_MODEL,
         through="UserTask",
         through_fields=("task", "user"),
         blank=True,
@@ -103,7 +101,7 @@ class UserTask(AbstractSoftDeletableModel):
         on_delete=CASCADE,
     )
     user = ForeignKey(
-        to=User,
+        to=AUTH_USER_MODEL,
         on_delete=CASCADE,
     )
 
