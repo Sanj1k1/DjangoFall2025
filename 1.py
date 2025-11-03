@@ -1,36 +1,38 @@
 # file1.py
-class Calculator:
-    def add(self, a, b):
-        return a + b
 
-    def subtract(self, a, b):
-        return a - b
+def greet(name):
+    return f"Hello, {name}!"
 
-    def multiply(self, a, b):
-        return a * b
+def add(a, b):
+    return a + b
 
-    def divide(self, a, b):
-        if b != 0:
-            return a / b
-        return "Division by zero!"
+def subtract(a, b):
+    return a - b
 
-def main():
-    calc = Calculator()
-    for i in range(1, 11):
-        print(f"{i} + {i} = {calc.add(i, i)}")
-        print(f"{i} - {i//2} = {calc.subtract(i, i//2)}")
-        print(f"{i} * 2 = {calc.multiply(i, 2)}")
-        print(f"{i} / 2 = {calc.divide(i, 2)}")
-    print("Loop done!")
+def multiply(a, b):
+    return a * b
 
-if __name__ == "__main__":
-    main()
+def divide(a, b):
+    if b == 0:
+        return None
+    return a / b
 
-# Adding extra functions to reach 50 lines
+def power(a, b):
+    return a ** b
+
+def is_even(n):
+    return n % 2 == 0
+
+def is_odd(n):
+    return n % 2 != 0
+
 def factorial(n):
     if n == 0:
         return 1
-    return n * factorial(n-1)
+    result = 1
+    for i in range(1, n+1):
+        result *= i
+    return result
 
 def fibonacci(n):
     a, b = 0, 1
@@ -40,5 +42,22 @@ def fibonacci(n):
         a, b = b, a + b
     return result
 
-print(factorial(5))
-print(fibonacci(10))
+def sum_list(lst):
+    return sum(lst)
+
+def max_list(lst):
+    return max(lst)
+
+def min_list(lst):
+    return min(lst)
+
+def reverse_list(lst):
+    return lst[::-1]
+
+def sort_list(lst):
+    return sorted(lst)
+
+def count_occurrences(lst, value):
+    return lst.count(value)
+
+def find_index(_
