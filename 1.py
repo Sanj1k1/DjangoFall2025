@@ -6,6 +6,9 @@ def greet(name):
 def addition(a, b, c):
     return a + b + c
 
+def add(a, b, c, d, e):
+    return a + b + c + d + e
+
 def subtract(a, b):
     return a - b
 
@@ -60,4 +63,7 @@ def sort_list(lst):
 def count_occurrences(lst, value):
     return lst.count(value)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 46c5d05 (duplicate 3)
