@@ -8,6 +8,7 @@ def fibonacci_generator(n):
     """Sanjar is the best"""
     """Daulet is Daulet"""
     """Temirbolat Maratuly"""
+    """Murat is my little brother who is 5 years old"""
 
 def factorial_generator(n):
     result = 1
