@@ -7,6 +7,7 @@ def fibonacci_generator(n):
         a, b = b, a + b
         
     """Sanjar is the best"""
+    """Abylai loh"""
 
 def factorial_generator(n):
     result = 1
