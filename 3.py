@@ -5,6 +5,8 @@ def fibonacci_generator(n):
     for _ in range(n):
         yield a
         a, b = b, a + b
+        
+    """Sanjar is the best"""
 
 def factorial_generator(n):
     result = 1
