@@ -9,6 +9,9 @@ def addition(a, b, c):
 def add(a, b, c, d, e):
     return a + b + c + d + e
 
+def add(a, b, c, d, e, f):
+    return a + b + c + d +e + f
+
 def subtract(a, b):
     return a - b
 
@@ -64,6 +67,9 @@ def count_occurrences(lst, value):
     return lst.count(value)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 46c5d05 (duplicate 3)
+=======
+>>>>>>> 1e9feef (duplicate 4)
