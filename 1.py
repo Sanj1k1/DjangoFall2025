@@ -3,8 +3,8 @@
 def greet(name):
     return f"Hello, {name}!"
 
-def addition(a, b, c):
-    return a + b + c
+def add(a, b, c, d):
+    return a + b + c + d
 
 def subtract(a, b):
     return a - b
@@ -59,5 +59,4 @@ def sort_list(lst):
 
 def count_occurrences(lst, value):
     return lst.count(value)
-
 
