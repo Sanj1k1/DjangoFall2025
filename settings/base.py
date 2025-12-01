@@ -26,6 +26,7 @@ DJANGO_AND_THIRD_PARTY_APPS = [
     "unfold.contrib.simple_history",  # optional, if django-simple-history package is used
     "unfold.contrib.location_field",  # optional, if django-location-field package is used
     "unfold.contrib.constance",  # optional, if django-constance package is used
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -37,6 +38,7 @@ PROJECT_APPS = [
     "apps.tasks.apps.TasksConfig",
     "apps.abstracts.apps.AbstractsConfig",
     "apps.customusers.apps.CustomusersConfig",
+    "apps.education.apps.EducationConfig",
 ]
 INSTALLED_APPS = DJANGO_AND_THIRD_PARTY_APPS + PROJECT_APPS
 
@@ -102,3 +104,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'customusers.CustomUser'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
